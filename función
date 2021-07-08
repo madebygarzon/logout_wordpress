@@ -1,0 +1,9 @@
+<?php
+function my_custom_logout_redirect(){
+  wp_redirect( home_url("/") );
+  exit();
+}
+add_action( 'wp_logout', 'my_custom_logout_redirect' );
+
+//Cambiar el "/" por la url a la que se redireccionara el usuario deslogueado
+?>
