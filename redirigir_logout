@@ -1,0 +1,2 @@
+//Codigo simple para añadir al function php, este sirve para redirigir al inicio cuando de cierra sesion. 
+add_action('wp_logout',create_function('','wp_redirect(home_url());exit();'));
