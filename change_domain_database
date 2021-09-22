@@ -1,0 +1,21 @@
+1. La primera sentencia que vamos a ejecutar será la encargada de actualizar la tabla wp_options:
+
+UPDATE wp_options SET option_value = replace(option_value, 'https://www.dominioactual.com', 'https://www.dominionuevo.com') WHERE option_name = 'home' OR option_name = 'siteurl';
+
+Una vez introducida la sentencia SQL pulsa en “Continuar” para que se ejecute y realice los cambios.
+
+2. Acto seguido vamos a modificar las URL de páginas y las entradas:
+
+UPDATE wp_posts SET guid = replace(guid, 'https://www.dominioactual.com', 'https://www.dominionuevo.com');
+
+Y pulsamos nuevamente en “Continuar” para ejecutarla.
+
+3. La siguiente sentencia es para actualizar los enlaces del contenido:
+
+UPDATE wp_posts SET post_content = replace(post_content, 'https://www.dominioactual.com', 'https://www.dominionuevo.com');
+
+4. Y la última sentencia es para modificar las URL de los custom fields:
+
+UPDATE wp_postmeta SET meta_value = replace(meta_value, 'https://www.dominioactual.com', 'https://www.dominionuevo.com');
+
+Con estos pasos habrás modificado correctamente la URL que usa tu Wordpress.
