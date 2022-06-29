@@ -1,0 +1,10 @@
+function search_only_post ($query)
+{
+if ($query->is_search)
+{
+$query->set('post_type', 'post');
+}
+return $query;
+}
+add_filter('pre_get_posts', 'search_only_post');
+//Code for search only post, no more. 
